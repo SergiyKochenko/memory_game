@@ -75,4 +75,7 @@ function showScore() {
     document.getElementById("score").innerText = game.score;
 }
 
-module.exports = { game, newGame, showScore, addTurn, lightsOn, showTurns, playerTurn };
+// Ensure compatibility with browser environments
+if (typeof module !== "undefined" && module.exports) {
+    module.exports = { game, newGame, showScore, addTurn, lightsOn, showTurns, playerTurn };
+}
