@@ -33,28 +33,45 @@ function newGame() {
 
 function addTurn() {
     game.playerMoves = [];
-    game.currentGame.push(game.choices[(Math.floor(Math.random() * 4))]);
-    showTurns();
+    const randomChoice = game.choices[Math.floor(Math.random() * game.choices.length)];
+    if (randomChoice) { // Ensure the random choice is valid
+        game.currentGame.push(randomChoice);
+        showTurns();
+    } else {
+        console.error("Invalid choice generated.");
+    }
 }
 
 function showTurns() {
     game.turnInProgress = true;
     game.turnNumber = 0;
     let turns = setInterval(function () {
-        lightsOn(game.currentGame[game.turnNumber]);
-        game.turnNumber++;
-        if (game.turnNumber >= game.currentGame.length) {
+        const currentId = game.currentGame[game.turnNumber];
+        if (currentId) { // Ensure the current ID is valid
+            lightsOn(currentId);
+            game.turnNumber++;
+            if (game.turnNumber >= game.currentGame.length) {
+                clearInterval(turns);
+                game.turnInProgress = false;
+            }
+        } else {
+            console.error(`Invalid ID in game.currentGame at index ${game.turnNumber}.`);
             clearInterval(turns);
             game.turnInProgress = false;
         }
     }, 800);
 }
 
-function lightsOn(circ) {
-    document.getElementById(circ).classList.add("light");
-    setTimeout(function () {
-        document.getElementById(circ).classList.remove("light");
-    }, 400);
+function lightsOn(circleId) {
+    const circle = document.getElementById(circleId);
+    if (circle) { // Ensure the element exists
+        circle.classList.add('light');
+        setTimeout(() => {
+            circle.classList.remove('light');
+        }, 500);
+    } else {
+        console.error(`Element with ID "${circleId}" not found.`);
+    }
 }
 
 function playerTurn() {

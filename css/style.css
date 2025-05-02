@@ -85,3 +85,17 @@ h2 {
 .light {
     opacity: 0.4;
 }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: auto;
+    background-color: #f9f9f9;
+    text-align: left;
+    padding: 10px 15px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better UI */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9em;
+    z-index: 10;
+}
