@@ -17,6 +17,7 @@ The Memory Game is fully responsive and has been tested using the [Am I Responsi
   - [Am I Responsive](#am-i-responsive)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
+  - [Live Site](#live-site)
   - [Features](#features)
     - [Existing Features](#existing-features)
     - [Future Features](#future-features)
@@ -38,6 +39,14 @@ The Memory Game is fully responsive and has been tested using the [Am I Responsi
 ## Overview
 
 The Memory Game is a browser-based game where players must remember and click on highlighted circles in the correct order. The game becomes progressively more challenging as the sequence length increases. It is designed to be responsive and works on all screen resolutions.
+
+---
+
+## Live Site
+
+The Memory Game is live and can be played at the following link:
+
+[Memory Game Live Site](https://sergiykochenko.github.io/memory_game/)
 
 ---
 
